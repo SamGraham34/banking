@@ -15,3 +15,5 @@ Initial Tests Are Split Up As:
 Sam - Bank and Account
 
 Myrlene - Customer and Saving Account
+
+Agnes - Transaction and Transaction Type
