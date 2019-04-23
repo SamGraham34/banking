@@ -4,23 +4,25 @@
  * and open the template in the editor.
  */
 package com.banking;
-
+import com.banking.TransactionTypeTest.TransactionType;
+import static java.lang.String.valueOf;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+ 
+
 
 /**
  *
  * @author Agnes B
  */
 public class TransactionTypeTest {
-    
     public TransactionTypeTest() {
     }
-    
+      
     @BeforeClass
     public static void setUpClass() {
     }
@@ -37,31 +39,19 @@ public class TransactionTypeTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of values method, of class TransactionType.
-     */
-    @Test
-    public void testValues() {
-        System.out.println("values");
-        TransactionType[] expResult = null;
-        TransactionType[] result = TransactionType.values();
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of valueOf method, of class TransactionType.
-     */
-    @Test
-    public void testValueOf() {
-        System.out.println("valueOf");
-        String arg0 = "";
-        TransactionType expResult = null;
-        TransactionType result = TransactionType.valueOf(arg0);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
     
+    
+    public enum TransactionType {
+        DEPOSIT, WITHDRAWAL, INTEREST, CHECK, FEE, PENALTY, ADJUSTMENT; 
+    }
+     
+    
+    @Test
+    public void TransactionTypeEnum(){
+      
+       TransactionType transactionType;
+       transactionType = TransactionType.DEPOSIT;
+       System.out.println("Transaction Type enum is set a value: " + transactionType);
+       assertEquals("DEPOSIT",transactionType);
+    }
 }
